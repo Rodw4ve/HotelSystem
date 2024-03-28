@@ -1,0 +1,51 @@
+/* Navbar.css */
+
+.navbar {
+    background-color: #0D0D0D; /* Dark background */
+    padding: 10px 20px; /* Padding around the navbar */
+  }
+  
+  .navbar-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox for positioning */
+    justify-content: space-between; /* Positions groups at opposite ends */
+    align-items: center;
+    width: 100%;
+  }
+  
+  .nav-group {
+    display: flex;
+  }
+  
+  .nav-group.left {
+    /* If you want additional styling for the left group, add here */
+  }
+  
+  .nav-group.right {
+    /* If you want additional styling for the right group, add here */
+  }
+  
+  .navbar li {
+    margin-right: 20px;
+  }
+  
+  .navbar li:last-child {
+    margin-right: 0; /* No margin for the last item to align with the edge */
+  }
+  
+  .navbar a {
+    color: #FFFFFF; /* White text color */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .navbar a:hover {
+    color: #FFC107; /* Highlight color on hover */
+  }
+  
+  /* Add additional media queries and styles for responsive adjustments if necessary */
+  
