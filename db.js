@@ -10,7 +10,13 @@ const pool = new Pool({
     port: process.env.DB_PORT || 5432,
   });
   
+// A function to set search_path and execute the query
+async function queryWithSearchPath(queryText, queryParams) {
+    await pool.query('SET search_path TO "E-HOTEL 2.0"');
+    return pool.query(queryText, queryParams);
+  }
 
 module.exports = {
-  query: (text, params) => pool.query(text, params),
+  query: queryWithSearchPath,
 };
+
