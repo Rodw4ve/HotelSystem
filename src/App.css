@@ -1,89 +1,71 @@
-/* Reset some basic elements */
-body, h1, h2, ul, li {
+/* App.css */
+
+/* General Reset */
+* {
   margin: 0;
   padding: 0;
-  list-style: none;
+  box-sizing: border-box;
 }
 
-/* Basic styling */
+/* Body and Typography Styles */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
   line-height: 1.6;
-}
-
-.App {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
   color: #333;
-  margin-bottom: 20px;
+  background-color: #f4f4f4;
 }
 
-h2 {
-  border-bottom: 2px solid #eee;
-  padding-bottom: 10px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  color: #444;
-}
-
-ul {
-  padding: 0;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
+/* Link Styles */
 a {
-  text-decoration: none;
   color: #007bff;
-  transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #0056b3;
+  text-decoration: underline;
 }
 
-/* Filter styling */
-label {
-  display: block;
-  margin: 10px 0;
+/* Container for the main content */
+.content {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-input[type="number"] {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box; /* Makes sure padding doesn't affect overall width */
+/* Common Header Styles */
+header {
+  padding: 20px 0;
+  background: #fff;
 }
 
-/* Layout adjustments */
-div {
-  margin-top: 20px;
+/* Common Footer Styles */
+footer {
+  padding: 20px 0;
+  background: #333;
+  color: #fff;
+  text-align: center;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .App {
-    margin: 10px;
-    padding: 10px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  label, input[type="number"] {
-    font-size: 14px;
-  }
+footer a {
+  color: #fff;
 }
+
+/* Utility Classes */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Layout Styles */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1;
+}
+
+/* Include other styles that you want to apply globally */
