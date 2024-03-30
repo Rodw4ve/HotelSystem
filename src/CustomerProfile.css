@@ -1,0 +1,50 @@
+/* CustomerProfile.css */
+.customer-profile {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .customer-profile h1 {
+    margin-bottom: 20px;
+  }
+  
+  .customer-profile .customer-details label,
+  .customer-profile .payment-history label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .customer-profile .customer-details input,
+  .customer-profile .payment-history input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .customer-profile .customer-details button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .customer-profile .payment-history ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .customer-profile .payment-history li {
+    background: #f4f4f4;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+  }
+  
