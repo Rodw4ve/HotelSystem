@@ -6,7 +6,7 @@ const rentingRoutes = require('../routes/rentings');
 const hotelRoutes = require('../routes/hotel');
 
 const app = express();
-const port = process.env.PORT || 0;
+const port = process.env.PORT || 3000;
 
 // Define the root route
 app.get('/', (req, res) => {
