@@ -1,95 +1,80 @@
 import React, { useState } from 'react';
-import './RentNow.css'; // Make sure this CSS file exists and contains the styles you need
+import axios from 'axios';
+import './BookNow.css';
 
-function RentNow() {
+function BookNow() {
+  // Initialize search criteria state
   const [searchCriteria, setSearchCriteria] = useState({
     startDate: '',
     endDate: '',
     capacity: '',
-    area: '',
+    area: '', // Assume we need to specify an area or city where the hotel is located
     hotelChain: '',
-    category: '',
-    totalRooms: '',
-    priceRange: {
-      min: '',
-      max: '',
-    }
+    category: '', // Assume we have categories or types of rooms to choose from
+    priceMin: '',
+    priceMax: '',
   });
 
+  // State to hold the search results and loading/error states
+  const [results, setResults] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  // Handle input changes for the search form
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setSearchCriteria({
-      ...searchCriteria,
-      [name]: value
-    });
+    setSearchCriteria(prevCriteria => ({
+      ...prevCriteria,
+      [name]: value,
+    }));
   };
 
-  const handlePriceChange = (e) => {
-    const { name, value } = e.target;
-    setSearchCriteria({
-      ...searchCriteria,
-      priceRange: {
-        ...searchCriteria.priceRange,
-        [name]: value
-      }
-    });
-  };
-
-  const handleSubmit = (e) => {
+  // Function to handle form submission and make the search request
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You would handle the search logic here, possibly making an API call to your backend
-    console.log('Search Criteria:', searchCriteria);
-    // TODO: Search for available rooms with these criteria
+    setIsLoading(true);
+    setError('');
+
+    try {
+      // Assuming your backend is running on localhost:5000 and you've set up proxying for the /api prefix
+      const response = await axios.get('/api/rooms/search', {
+        params: searchCriteria,
+      });
+      setResults(response.data);
+      setIsLoading(false);
+    } catch (err) {
+      setError('Failed to fetch search results. Please try again.');
+      setIsLoading(false);
+    }
   };
 
   return (
-    <div className="RentNow">
-      <h1>Rent Now</h1>
+    <div className="BookNow">
+      <h1>Book Now</h1>
       <form onSubmit={handleSubmit}>
-        <label>
-          Start Date:
-          <input type="date" name="startDate" value={searchCriteria.startDate} onChange={handleInputChange} />
-        </label>
-        <label>
-          End Date:
-          <input type="date" name="endDate" value={searchCriteria.endDate} onChange={handleInputChange} />
-        </label>
-        <label>
-          Capacity:
-          <input type="number" name="capacity" value={searchCriteria.capacity} onChange={handleInputChange} />
-        </label>
-        <label>
-          Area:
-          <input type="text" name="area" value={searchCriteria.area} onChange={handleInputChange} />
-        </label>
-        <label>
-          Hotel Chain:
-          <input type="text" name="hotelChain" value={searchCriteria.hotelChain} onChange={handleInputChange} />
-        </label>
-        <label>
-          Category:
-          <select name="category" value={searchCriteria.category} onChange={handleInputChange}>
-            {/* Insert category options here */}
-          </select>
-        </label>
-        <label>
-          Total Number of Rooms in Hotel:
-          <input type="number" name="totalRooms" value={searchCriteria.totalRooms} onChange={handleInputChange} />
-        </label>
-        <div className="price-range">
-          <label>
-            Min Price:
-            <input type="number" name="min" value={searchCriteria.priceRange.min} onChange={handlePriceChange} />
-          </label>
-          <label>
-            Max Price:
-            <input type="number" name="max" value={searchCriteria.priceRange.max} onChange={handlePriceChange} />
-          </label>
-        </div>
-        <button type="submit">Search</button>
+        {/* Input fields for search criteria */}
+        {/* Assuming you have corresponding state properties and handlers for each */}
+        {/* ... */}
+        <button type="submit" disabled={isLoading}>Search</button>
       </form>
+
+      {isLoading && <p>Loading...</p>}
+      {error && <p className="error">{error}</p>}
+      {results.length > 0 ? (
+        <div className="results">
+          {results.map(room => (
+            <div key={room.id} className="room">
+              {/* Display room details here */}
+              <p>{room.name} - {room.description}</p>
+              {/* Add more room details and possibly a booking button */}
+            </div>
+          ))}
+        </div>
+      ) : (
+        !isLoading && <p>No rooms found with the given criteria.</p>
+      )}
     </div>
   );
 }
 
-export default RentNow;
+export default BookNow;

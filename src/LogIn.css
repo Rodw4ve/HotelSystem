@@ -1,0 +1,66 @@
+/* LogIn.css */
+
+.LogIn {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
+    margin: 50px auto;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .LogIn h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .LogIn form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .LogIn label {
+    margin-bottom: 5px;
+  }
+  
+  .LogIn input {
+    padding: 10px;
+    margin-bottom: 20px; /* Adjust space between inputs */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .LogIn input[type="text"],
+  .LogIn input[type="password"] {
+    font-size: 16px; /* Increase font size for better readability */
+  }
+  
+  .LogIn button {
+    padding: 10px;
+    background-color: #4CAF50; /* A shade of green */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .LogIn button:hover {
+    background-color: #45a049; /* Darken the button when hovered */
+  }
+  
+  /* Add responsiveness to your form */
+  @media (max-width: 768px) {
+    .LogIn {
+      padding: 20px;
+      margin-top: 20px;
+    }
+  
+    .LogIn h1 {
+      font-size: 20px;
+    }
+  }
+  
