@@ -3,7 +3,7 @@ const router = express.Router();
 const bookingsController = require('../controllers/bookingsController');
 
 // Endpoint to create a new booking
-router.post('/', bookingsController.createBooking);
+router.post('/', bookingsController.bookRoom);;
 
 // Endpoint to update an existing booking
 router.put('/:bookingId', bookingsController.updateBooking);

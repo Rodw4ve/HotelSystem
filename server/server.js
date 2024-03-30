@@ -1,9 +1,9 @@
 require('dotenv').config();
 const express = require('express');
-const roomRoutes = require('./routes/rooms');
-const bookingsRoutes = require('./routes/bookings')
-const rentingRoutes = require('./routes/rentings');
-const hotelRoutes = require('./routes/hotel');
+const roomRoutes = require('../routes/rooms');
+const bookingsRoutes = require('../routes/bookings')
+const rentingRoutes = require('../routes/rentings');
+const hotelRoutes = require('../routes/hotel');
 
 const app = express();
 const port = process.env.PORT || 0;
