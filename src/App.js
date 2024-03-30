@@ -19,7 +19,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/rent-now" element={<RentNow />} />
+          <Route path="/book-now" element={<BookNow />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/booked-rooms" element={<BookedRooms />} />
