@@ -2,6 +2,16 @@ import axios from 'axios';
 
 const API_URL = 'http://localhost:3000/api'; // Adjust the port if your backend runs on a different port
 
+export const searchAvailableRooms = async (searchParams) => {
+    try {
+        const response = await axios.get(`${API_URL}/rooms/search`, { params: searchParams });
+        return response.data;
+    } catch (error) {
+        console.error('Error searching available rooms:', error);
+        throw error;
+    }
+};
+
 export const getCustomerBookings = async (customerId) => {
     try {
         const response = await axios.get(`${API_URL}/bookings/customer/${customerId}`);
@@ -11,6 +21,7 @@ export const getCustomerBookings = async (customerId) => {
         throw error;
     }
 };
+
 export const createBooking = async (bookingData) => {
     try {
         const response = await axios.post(`${API_URL}/bookings`, bookingData);
@@ -41,6 +52,16 @@ export const cancelBooking = async (bookingId) => {
     }
 };
 
+export const getBookingById = async (bookingId) => {
+    try {
+        const response = await axios.get(`${API_URL}/bookings/${bookingId}`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching booking:', error);
+        throw error;
+    }
+};
+
 export const checkInAndRentRoom = async (bookingId) => {
     try {
         const response = await axios.post(`${API_URL}/renting/check-in/${bookingId}`);
@@ -60,4 +81,23 @@ export const directRentRoom = async (rentalData) => {
         throw error;
     }
 };
-// Add more functions as needed to interact with other endpoints
+
+export const updateRental = async (bookingId, updatedRentalData) => {
+    try {
+        const response = await axios.put(`${API_URL}/renting/${bookingId}`, updatedRentalData);
+        return response.data;
+    } catch (error) {
+        console.error('Error updating rental:', error);
+        throw error;
+    }
+};
+
+export const cancelRental = async (bookingId) => {
+    try {
+        const response = await axios.delete(`${API_URL}/renting/${bookingId}`);
+        return response.data;
+    } catch (error) {
+        console.error('Error canceling rental:', error);
+        throw error;
+    }
+};

@@ -5,15 +5,15 @@ import './BookNow.css';
 function BookNow() {
   // Initialize search criteria state
   const [searchCriteria, setSearchCriteria] = useState({
-    startDate: '',
-    endDate: '',
+    check_in_date: '',
+    check_out_date: '',
     capacity: '',
-    area: '', // Assume we need to specify an area or city where the hotel is located
+    city: '',
     hotelChain: '',
-    category: '', // Assume we have categories or types of rooms to choose from
+    rating: '',
     priceMin: '',
-    priceMax: '',
-  });
+    priceMax: ''
+});
 
   // State to hold the search results and loading/error states
   const [results, setResults] = useState([]);
