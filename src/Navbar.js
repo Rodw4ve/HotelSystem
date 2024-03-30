@@ -14,7 +14,7 @@ const Navbar = () => {
         <div className="nav-group right">
           <li><Link to="/profile">Profile</Link></li>
           <li><Link to="/rented-rooms">Booked Rooms</Link></li>
-          <li><Link to="/rent-now">Book Now</Link></li>
+          <li><Link to="/book-now">Book Now</Link></li>
         </div>
       </ul>
     </nav>
