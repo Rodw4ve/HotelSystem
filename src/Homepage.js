@@ -4,11 +4,11 @@ import './Homepage.css'; // Ensure this points to the right CSS file for your Ho
 
 function Homepage() {
   // Expanded dummy data
-  const cities = ['New York', 'London', 'Paris', 'Tokyo', 'Berlin', 'Amsterdam'];
-  const hotelChains = ['Marriott', 'Hilton', 'Hyatt', 'Sheraton', 'Ibis', 'Ritz-Carlton'];
-  const availabilities = ['Available Now', 'Check Availability', 'Sold Out'];
-  const capacities = ['Single Room', 'Double Room', 'Suite', 'Family Room'];
-  const ratings = ['5-star', '4-star', '3-star', '2-star'];
+  const cities = ['New York', 'Los Angeles', 'Toronto', 'Montreal', 'Vancouver', 'Cancun', 'Austin', 'Miami'];
+  const hotelChains = ['Hilton', 'Wydham', 'Hyatt', 'Marriott', 'Continental'];
+  const availabilities = ['Vacant', 'Booking', 'Renting'];
+  const capacities = ['Single Room', 'Double Room', 'Triple Room', 'Quad Room', 'Suite'];
+  const ratings = ['3-star', '2-star', '1-star'];
 
   // State for price filter
   const [priceRange, setPriceRange] = useState({ min: 50, max: 500 });
