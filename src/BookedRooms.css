@@ -1,0 +1,59 @@
+.booked-rooms-container {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .booked-rooms-container h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .booked-rooms-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .booked-rooms-container li {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .booked-rooms-container li:last-child {
+    border-bottom: none;
+  }
+  
+  .booked-rooms-container p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .no-bookings-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+    color: #666;
+  }
+  
+  .no-bookings-message p {
+    margin: 10px 0;
+  }
+  
+  .no-bookings-message a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .no-bookings-message a:hover {
+    text-decoration: underline;
+  }
+  
