@@ -24,54 +24,54 @@ function BookNow() {
       name: 'Standard Single Room',
       capacity: 'Single',
       city: 'New York',
-      hotelChain: 'Marriott',
-      price: 150,
-      rating: 3,
+      hotelChain: 'Hilton',
+      price: 50,
+      rating: 2,
     },
     {
-      id: 2,
+      id:7,
       name: 'Deluxe Double Room',
       capacity: 'Double',
       city: 'Los Angeles',
-      hotelChain: 'Hilton',
-      price: 200,
-      rating: 4,
+      hotelChain: 'Wydham',
+      price: 100,
+      rating: 2,
     },
     {
-      id: 3,
-      name: 'Family Suite',
-      capacity: 'Family',
-      city: 'Chicago',
+      id: 108,
+      name: 'Three person bedroom',
+      capacity: 'Triple',
+      city: 'Toronto',
+      hotelChain: 'Hyatt',
+      price: 150,
+      rating: 2,
+    },
+    {
+      id: 154,
+      name: 'Family room',
+      capacity: 'Quad',
+      city: 'Canucun',
+      hotelChain: 'Marriott',
+      price: 200,
+      rating: 3,
+    },
+    {
+      id: 185,
+      name: 'Exclusive suite',
+      capacity: 'Suite',
+      city: 'Vancouver',
       hotelChain: 'InterContinental',
       price: 250,
-      rating: 5,
-    },
-    {
-      id: 4,
-      name: 'Executive Suite',
-      capacity: 'Suite',
-      city: 'Houston',
-      hotelChain: 'Hyatt',
-      price: 250,
-      rating: 4,
-    },
-    {
-      id: 5,
-      name: 'Economy Single Room',
-      capacity: 'Single',
-      city: 'New York',
-      hotelChain: 'Holiday Inn',
-      price: 100,
       rating: 2,
     },
     // Add more mock data as needed
   ];
 
   // Static options for the dropdowns
-  const capacities = ['Single', 'Double', 'Suite', 'Family'];
-  const cities = ['New York', 'Los Angeles', 'Chicago', 'Houston'];
-  const hotelChains = ['Marriott', 'Hilton', 'InterContinental', 'Hyatt'];
-  const ratings = [1, 2, 3, 4, 5];
+  const capacities = ['Single', 'Double', 'Triple', 'Quad', 'Suite'];
+  const cities = ['New York', 'Los Angeles', 'Toronto', 'Montreal', 'Vancouver', 'Cancun', 'Austin', 'Miami'];
+  const hotelChains = ['Hilton', 'Wydham', 'Hyatt', 'Marriott', 'Continental'];
+  const ratings = [1, 2, 3];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
