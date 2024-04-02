@@ -22,7 +22,7 @@ function Homepage() {
     <div className="Homepage">
       <header className="Homepage-header">
         <h1>Welcome to e-Hotels</h1>
-        <p>Discover your perfect stay with us. Explore a world of luxury, comfort, and convenience.</p>
+        <p>Discover your perfect stay. Explore a world of comfort and convenience.</p>
       </header>
 
       <main>
@@ -94,7 +94,7 @@ function Homepage() {
 
       <footer className="Homepage-footer">
         <p>Contact Us: info@e-hotels.com | 1-800-888-8888</p>
-        <p>Find answers to your questions in our <a href="/faq">FAQ</a> section or read our <a href="/privacy-policy">Privacy Policy</a>.</p>
+        <p>Find the answers to all your questions in our <a href="/faq">FAQ</a> section or read our <a href="/privacy-policy">Privacy Policy</a>.</p>
       </footer>
     </div>
   );
