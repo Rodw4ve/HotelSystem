@@ -11,7 +11,7 @@ function Homepage() {
   const ratings = ['3-star', '2-star', '1-star'];
 
   // State for price filter
-  const [priceRange, setPriceRange] = useState({ min: 50, max: 500 });
+  const [priceRange, setPriceRange] = useState({ min: 50, max: 250 });
 
   // Handler for price range change
   const handlePriceChange = (event) => {
@@ -93,7 +93,7 @@ function Homepage() {
       </main>
 
       <footer className="Homepage-footer">
-        <p>Contact Us: info@e-hotels.com | 1-800-123-4567</p>
+        <p>Contact Us: info@e-hotels.com | 1-800-888-8888</p>
         <p>Find answers to your questions in our <a href="/faq">FAQ</a> section or read our <a href="/privacy-policy">Privacy Policy</a>.</p>
       </footer>
     </div>
