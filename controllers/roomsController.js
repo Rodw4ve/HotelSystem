@@ -1,33 +1,27 @@
 const db = require('../db');
 // Search for Available rooms
+
 exports.searchAvailableRooms = async (req, res) => {
     const { check_in_date, check_out_date, capacity, city, hotelChain, rating, priceMin, priceMax } = req.query;
 
     try {
         const query = `
-            SELECT r.room_id, r.price, r.capacity, h.rating, hc.name AS chain_name, c.name AS city_name
-            FROM room r
-            JOIN hotel h ON r.hotel_id = h.hotel_id
-            JOIN hotelchain hc ON h.chain_id = hc.chain_id
-            JOIN hotel_city hc2 ON h.hotel_id = hc2.hotel_id
-            JOIN city c ON hc2.city_code = c.city_code
-            WHERE r.status = 'vacant'
-            AND ($3::text IS NULL OR r.capacity = $3)
-            AND ($4::text IS NULL OR c.name = $4)
-            AND ($5::text IS NULL OR hc.name = $5)
-            AND ($6::int IS NULL OR h.rating >= $6)
-            AND ($7::numeric IS NULL OR r.price >= $7)
-            AND ($8::numeric IS NULL OR r.price <= $8)
-            AND r.room_id NOT IN (
-                SELECT room_id FROM archives
-                WHERE type = 'booking'
-                AND check_in_date <= $2 AND check_out_date >= $1
-            )
-            AND r.room_id NOT IN (
-                SELECT room_id FROM archives
-                WHERE type = 'rental'
-                AND check_in_date <= $2 AND check_out_date >= $1
-            );
+        SELECT r.room_id, r.room_num, r.price, r.amenities, r.capacity, r.view
+        FROM Room r
+        JOIN Hotel h ON r.hotel_id = h.hotel_id
+        JOIN Hotel_City hc ON h.hotel_id = hc.hotel_id
+        JOIN City c ON hc.name = c.name
+        JOIN HotelChain hc2 ON h.chain_id = hc2.chain_id
+        JOIN Archives a ON r.room_id = a.room_id 
+        WHERE c.name IN ('New York', 'Los Angeles', 'Toronto', 'Montreal', 'Vancouver', 'Cancun', 'Austin', 'Miami') -- Filter by city
+        AND r.capacity IN ('single', 'double', 'triple', 'quad', 'suite') -- Filter by room capacity
+        AND r.price BETWEEN 0 AND 1000 -- Filter by price range
+        AND r.status = 'vacant' -- Filter by room status
+        AND hc2.name IN ('Hilton', 'Wyndham','Hyatt','Marriott','Continental') -- Filter by hotel chain name
+        AND h.rating IN  (1,2,3) -- Filter by hotel rating
+        AND a.check_in_date <= '2024-05-01' -- Filter by check-in date
+        AND a.check_out_date >= '2024-04-01' -- Filter by check-out date
+        ORDER BY r.price ASC;
         `;
         const params = [check_in_date, check_out_date, capacity, city, hotelChain, rating, priceMin, priceMax];
         const { rows } = await db.query(query, params);
