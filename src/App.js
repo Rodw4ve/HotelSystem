@@ -8,7 +8,7 @@ import LogIn from './LogIn'; // Import the LogIn component
 import Profile from './Profile'; // Import the Profile component
 import BookedRooms from './BookedRooms';
 import CustomerBookings from './CustomerBookings';
-import HotelService from './HotelService';
+import HotelService from './HotelService'; 
 
 import './App.css';
 

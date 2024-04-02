@@ -13,7 +13,7 @@ const Navbar = () => {
         </div>
         <div className="nav-group right">
           <li><Link to="/profile">Profile</Link></li>
-          <li><Link to="/rented-rooms">Booked Rooms</Link></li>
+          <li><Link to="/booked-rooms">Booked Rooms</Link></li>
           <li><Link to="/book-now">Book Now</Link></li>
         </div>
       </ul>
